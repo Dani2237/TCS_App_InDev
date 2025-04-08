@@ -13,7 +13,8 @@ Download tutorial:
 
 1. Press on the blue "<> Code" button in the top right corner.
 
-![image](https://github.com/user-attachments/assets/9928a502-31ca-4f2c-9424-412ec7d1b8a2)
+![image](https://github.com/user-attachments/assets/1b6eb9e2-d9d9-4d2d-983f-02938cd22299)
+
 
 2. Then press on the "Download ZIP" button for the download to start.
 
