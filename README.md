@@ -19,7 +19,7 @@ Download tutorial:
 
 2. Then press on the "Download ZIP" button for the download to start.
 
-![image](https://github.com/user-attachments/assets/e7bce528-4002-4e92-8501-40fc3a541eae)
+![image](https://github.com/user-attachments/assets/f283eeb6-6493-4630-9acd-c33e6d45bf1b)
 
 3. Now it's on you! extract the ZIP, open the folder that just appeared and open the "tcs-app.html" document.
 4. The tutorial is now done, thank you for downloading and remember to check #app-discussion.
