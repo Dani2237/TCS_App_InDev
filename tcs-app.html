@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Zentriert die Rechtecke horizontal */
+            align-items: flex-start; /* Richtet die Rechtecke oben aus */
+            height: 100vh;
+            background-color: #ffffff; /* Weißer Hintergrund */
+            flex-wrap: wrap; /* Rechtecke umbrechen, wenn kein Platz mehr ist */
+        }
+        .rectangle {
+            width: 300px;
+            height: 50px;
+            margin: 10px; /* Abstand zwischen den Rechtecken */
+            background-color: #ffffff;
+            border-radius: 25px; /* Halb so viel wie die Höhe für abgerundete Ecken */
+            border: 2px solid #000000; /* Schwarzer Rand */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            font-weight: bold;
+            color: #000000;
+        }
+        .special-rectangle {
+            width: 50px;
+            height: 50px;
+            background-color: #ffffff; /* Weißer Hintergrund */
+            border-radius: 50%; /* Macht den Container rund */
+            border: 2px solid #000000; /* Dunkler Rand */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px; /* Abstand zwischen den Rechtecken */
+        }
+        .special-rectangle img {
+            width: 40px; /* Gleiche Breite wie der Kreis */
+            height: auto; /* Gleiche Höhe wie der Kreis */
+            border-radius: 50%; /* Macht das Bild rund */
+            object-fit: cover; /* Schneidet das Bild zu, um es perfekt einzupassen */
+            margin: 0; /* Entfernt zusätzlichen Abstand */
+        }
+    </style>
+</head>
+<body>
+    <div class="rectangle">🏡 FoFa Main menu</div>
+    <div class="rectangle">🛣️ Roadmap of the Development</div>
+    <div class="rectangle">🤔 What is this app?</div>
+    <a href="https://example.com/settings" target="_blank" class="rectangle">⚙️ Settings</a>
+    <a href="https://discord.gg/7QV5vffm" class="special-rectangle" target="_blank">
+        <img src="discord _logo.jpg" alt="Discord">
+    </a>
+</body>
+</html>
