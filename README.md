@@ -14,7 +14,7 @@ Download tutorial:
 
 ![image](https://github.com/user-attachments/assets/9928a502-31ca-4f2c-9424-412ec7d1b8a2)
 
-2. Then press on the "Download ZIP" button, now the download has started.
+2. Then press on the "Download ZIP" button for the download to start.
 
 ![image](https://github.com/user-attachments/assets/54351b6d-4cf1-452b-b188-57772e266e03)
 
