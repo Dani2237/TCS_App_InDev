@@ -6,4 +6,4 @@ Hello, the development of this project has now officially started, for further i
 
 If you have any questions, please feel free to open a ticket in the ticket-support section.
 
-Link to the Discord Server:
+Link to the Discord Server: https://discord.gg/CBCAytE8kU
