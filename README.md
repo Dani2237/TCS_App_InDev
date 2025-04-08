@@ -10,7 +10,15 @@ Link to the Discord Server: https://discord.gg/CBCAytE8kU
 
 Download tutorial:
 
+1. Press on the blue "<> Code" button in the top right corner.
+
 ![image](https://github.com/user-attachments/assets/9928a502-31ca-4f2c-9424-412ec7d1b8a2)
 
-1. Press on the blue "<> Code" button in the top right corner.
+2. Then press on the "Download ZIP" button, now the download has started.
+
+![image](https://github.com/user-attachments/assets/54351b6d-4cf1-452b-b188-57772e266e03)
+
+3. Now it's on you! extract the ZIP, open the folder that just appeared and open the "tcs-app.html" document.
+4. The tutorial is now done, thank you for downloading and remember to check #app-discussion.
+
 
