@@ -3,10 +3,9 @@
 ### Latest updated: 08.04.2025
 
 Hello, the development of this project has now officially started, for further information please click on the link below and join the discord server.
-
 If you have any questions, please feel free to ask them in #app-discussion, it's a channel in the "mainchat" section.
-
-Before you download the app, please remember that the app is only available for Windows and MacOS. - - - > And of course for Linux, but normally if you are a Linux user you should be able to that without GitHub.
+Before you download the app, please remember that the app is only available for Windows and MacOS.
+And of course for Linux, but normally if you are a Linux user you should be able to that without GitHub.
 
 Link to the Discord Server: https://discord.gg/CBCAytE8kU
 
