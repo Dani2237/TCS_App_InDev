@@ -10,19 +10,20 @@
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center; /* Zentriert die Rechtecke horizontal */
-            align-items: flex-start; /* Richtet die Rechtecke oben aus */
+            justify-content: center;
+            align-items: flex-start;
             height: 100vh;
-            background-color: #ffffff; /* Weißer Hintergrund */
-            flex-wrap: wrap; /* Rechtecke umbrechen, wenn kein Platz mehr ist */
+            background-color: #ffffff;
+            flex-wrap: wrap;
+            transition: background-color 0.3s, color 0.3s;
         }
         .rectangle {
             width: 300px;
             height: 50px;
-            margin: 10px; /* Abstand zwischen den Rechtecken */
+            margin: 10px;
             background-color: #ffffff;
-            border-radius: 25px; /* Halb so viel wie die Höhe für abgerundete Ecken */
-            border: 2px solid #000000; /* Schwarzer Rand */
+            border-radius: 25px;
+            border: 2px solid #000000;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             display: flex;
             justify-content: center;
@@ -30,35 +31,251 @@
             font-size: 16px;
             font-weight: bold;
             color: #000000;
+            position: relative;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
         .special-rectangle {
-            width: 50px;
-            height: 50px;
-            background-color: #ffffff; /* Weißer Hintergrund */
-            border-radius: 50%; /* Macht den Container rund */
-            border: 2px solid #000000; /* Dunkler Rand */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             display: flex;
+            align-items: center;
+            gap: 40px; /* Abstand zwischen Logo und Text */
+            text-decoration: none;
+            color: inherit;
+            margin-top: 10px;
+        }
+        
+        .special-rectangle img {
+            width: 45px;
+            height: auto;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #000000;
+            padding: 2px;
+        }
+        
+        .special-rectangle span {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .follow-text {
+            position: absolute;
+            pointer-events: none;
+            display: none;
+            font-size: 14px;
+            color: #333;
+            background-color: #fff;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .popout {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
             justify-content: center;
             align-items: center;
-            margin: 10px; /* Abstand zwischen den Rechtecken */
         }
-        .special-rectangle img {
-            width: 40px; /* Gleiche Breite wie der Kreis */
-            height: auto; /* Gleiche Höhe wie der Kreis */
-            border-radius: 50%; /* Macht das Bild rund */
-            object-fit: cover; /* Schneidet das Bild zu, um es perfekt einzupassen */
-            margin: 0; /* Entfernt zusätzlichen Abstand */
+        .popout-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .rectangle.dark-mode {
+            background-color: #333333;
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+        .popout-content.dark-mode {
+            background-color: #333333;
+            color: #ffffff;
+        }
+    
+        /* Styling für den Theme-Schalter */
+        .theme-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 25px;
+            margin-top: 20px;
+        }
+    
+        .theme-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+    
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.4s;
+            border-radius: 25px;
+        }
+    
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 19px;
+            width: 19px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+    
+        input:checked + .slider {
+            background-color: #007bff;
+        }
+    
+        input:checked + .slider:before {
+            transform: translateX(25px);
         }
     </style>
 </head>
 <body>
-    <div class="rectangle">🏡 FoFa Main menu</div>
-    <div class="rectangle">🛣️ Roadmap of the Development</div>
-    <div class="rectangle">🤔 What is this app?</div>
-    <a href="https://example.com/settings" target="_blank" class="rectangle">⚙️ Settings</a>
-    <a href="https://discord.gg/7QV5vffm" class="special-rectangle" target="_blank">
-        <img src="discord _logo.jpg" alt="Discord">
+    <div class="rectangle" data-text="TCS Main menu">🪐 TCS Main menu</div>
+    <div class="rectangle" data-text="Roadmap of the Development">🛣️ Roadmap of the Development</div>
+    <div class="rectangle" id="settingsButton" data-text="Settings">⚙️ Settings</div>
+    <div class="rectangle" id="creditsButton" data-text="Credits">📜 Credits</div>
+    <a href="https://discord.gg/7QV5vffm" class="special-rectangle" target="_blank" data-text="Join Discord">
+        <img src="discord _logo.jpg" alt="Discord" style="border: 2px solis #000000; border-radius: 50%; padding: 2px;">
     </a>
+    <div class="follow-text" id="followText"></div>
+
+    <!-- Popout für Settings -->
+    <div class="popout" id="settingsPopout">
+        <div class="popout-content">
+            <span class="close-button" id="closeSettingsPopout">&times;</span>
+            <h2>Settings</h2>
+            <p>Here you can manage your settings.</p>
+            <label class="theme-switch">
+                <input type="checkbox" id="themeToggle">
+                <span class="slider"></span>
+            </label>
+            <p>Toggle Dark Mode</p>
+        </div>
+    </div>
+
+    <!-- Popout für Credits -->
+    <div class="popout" id="creditsPopout">
+        <div class="popout-content">
+            <span class="close-button" id="closeCreditsPopout">&times;</span>
+            <h2>Credits</h2>
+            <a href="https://github.com/Dani2237" class="special-rectangle" target="_blank" data-text="Look up on">
+                <img src="github_logo.png" alt="GitHub">
+                <span>Made by Dani2237</span> 
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const rectangles = document.querySelectorAll('.rectangle, .special-rectangle');
+        const followText = document.getElementById('followText');
+        const settingsButton = document.getElementById('settingsButton');
+        const creditsButton = document.getElementById('creditsButton');
+        const settingsPopout = document.getElementById('settingsPopout');
+        const creditsPopout = document.getElementById('creditsPopout');
+        const closeSettingsPopout = document.getElementById('closeSettingsPopout');
+        const closeCreditsPopout = document.getElementById('closeCreditsPopout');
+        const themeToggle = document.getElementById('themeToggle');
+
+        // Funktionalität für den Text, der der Maus folgt
+        rectangles.forEach(rectangle => {
+            rectangle.addEventListener('mouseenter', (e) => {
+                const text = rectangle.getAttribute('data-text');
+                followText.textContent = text;
+                followText.style.display = 'block';
+            });
+
+            rectangle.addEventListener('mouseleave', () => {
+                followText.style.display = 'none';
+            });
+
+            rectangle.addEventListener('mousemove', (e) => {
+                followText.style.left = e.pageX + 10 + 'px'; // 10px Abstand zur Maus
+                followText.style.top = e.pageY + 10 + 'px';
+            });
+        });
+
+        // Öffne das Settings-Popout
+        settingsButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            settingsPopout.style.display = 'flex';
+        });
+
+        // Schließe das Settings-Popout
+        closeSettingsPopout.addEventListener('click', () => {
+            settingsPopout.style.display = 'none';
+        });
+
+        // Öffne das Credits-Popout
+        creditsButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            creditsPopout.style.display = 'flex';
+        });
+
+        // Schließe das Credits-Popout
+        closeCreditsPopout.addEventListener('click', () => {
+            creditsPopout.style.display = 'none';
+        });
+
+        // Schließe Popouts, wenn außerhalb geklickt wird
+        window.addEventListener('click', (e) => {
+            if (e.target === settingsPopout) {
+                settingsPopout.style.display = 'none';
+            }
+            if (e.target === creditsPopout) {
+                creditsPopout.style.display = 'none';
+            }
+        });
+
+        // Event-Listener für den Theme-Schalter
+        themeToggle.addEventListener('change', () => {
+            document.body.classList.toggle('dark-mode');
+            document.querySelectorAll('.rectangle').forEach(rectangle => {
+                rectangle.classList.toggle('dark-mode');
+            });
+            document.querySelector('.popout-content').classList.toggle('dark-mode');
+        });
+
+        // Funktion, um jeden Text auf der Website bearbeitbar zu machen
+        document.querySelectorAll('*').forEach(element => {
+            element.addEventListener('dblclick', () => {
+                element.setAttribute('contenteditable', 'true');
+                element.focus();
+            });
+            element.addEventListener('blur', () => {
+                element.removeAttribute('contenteditable');
+            });
+        });
+    </script>
 </body>
 </html>
