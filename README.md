@@ -1,8 +1,8 @@
 # TCS_App_InDev-0.0.2
 
-### Latest updated: 09.04.2025
+### Latest updated: Monday 14.04.2025
 
-Hello, the development of this project has now officially started, for further information please click on the link below and join the discord server.
+Hello, this is the first full version of the app after the development has started in April 2025, for further information please click on the link below and join the discord server.
 If you have any questions, please feel free to ask them in #app-discussion, it's a channel in the "mainchat" section.
 Before you download the app, please remember that the app is only available for Windows and MacOS.
 And of course for Linux, but normally if you are a Linux user you should be able to that without GitHub.
