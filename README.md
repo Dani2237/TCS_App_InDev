@@ -1,6 +1,6 @@
-# TCS_App_InDev-0.1.0
+# TCS_App_InDev-0.1.1
 
-### Latest updated: Monday 14.04.2025
+### Latest updated: Monday 16.04.2025
 
 Hello, this is the first full version of the app after the development has started in April 2025, for further information please click on the link below and join the discord server.
 If you have any questions, please feel free to ask them in #app-discussion, it's a channel in the "mainchat" section.
